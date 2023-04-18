@@ -11,6 +11,7 @@ def cleanData(dataframe):
     # convert all to lowercase
     dataframe = dataframe.select(functions.lower("value").alias("value"))
     # split words
+    dataframe = dataframe.withColumn("value", functions.regexp_replace("value", "—", " "))
     dataframe = dataframe.select(functions.split("value", " ").alias("lines"))
     # explode dataframe
     dataframe = dataframe.select(functions.explode("lines").alias("words"))
@@ -20,6 +21,7 @@ def cleanData(dataframe):
     dataframe = dataframe.withColumn("words", udf_removeStopwords(dataframe["words"]))
     # remove empty rows form Dataframe
     dataframe = dataframe.filter("words != ''")
+
 
     return dataframe
 

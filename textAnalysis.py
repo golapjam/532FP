@@ -4,6 +4,7 @@ import json
 from pyspark.sql import SparkSession
 import os
 from cleaning import cleanData
+from statistics import getStats
 
 def mainLoop():
     author = input('Enter Author Name (First Last): ')
@@ -18,7 +19,7 @@ def mainLoop():
     if os.path.exists('corpus.txt'):
         os.remove('corpus.txt')
     logData = cleanData(logData)
-    # getStats()
+    statData = getStats(logData)
     spark.stop()
 
 
