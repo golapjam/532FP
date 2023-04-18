@@ -3,6 +3,7 @@ import requests
 import json
 from pyspark.sql import SparkSession
 import os
+from cleaning import cleanData
 
 def mainLoop():
     author = input('Enter Author Name (First Last): ')
@@ -16,13 +17,13 @@ def mainLoop():
     print('Lines with a: %i\n' % numAs)
     if os.path.exists('corpus.txt'):
         os.remove('corpus.txt')
-    # cleanData()
+    logData = cleanData(logData)
     # getStats()
     spark.stop()
 
 
 def getBooks(author):
-    query = 'https://gutendex.com/books?search=complete%20works%20' + author[0] + '%20' + author[1]
+    query = 'https://gutendex.com/books?search=complete%20works%20' + author[0].lower() + '%20' + author[1].lower()
     print(query)
     try:
         req = requests.get(query)
