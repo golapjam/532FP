@@ -1,4 +1,3 @@
-#from gutenberg import GutenbergAPI
 import requests
 import json
 from pyspark.sql import SparkSession
