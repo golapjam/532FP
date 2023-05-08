@@ -14,16 +14,17 @@ def getStats(dataframe):
     return wordCounts, smallWords, midlengthWords, largeWords
 
 def wordCount(dataframe):
-    wordCounts = dataframe.groupBy("words").count().orderBy(functions.desc("count")).alias("counts")
+    wordCounts = dataframe.groupBy("words").count().orderBy(functions.desc("count")).alias("counts").cache()
     wordCounts.show()
     return wordCounts
 
 def getSmallWords(dataframe):
-    smallWords = dataframe.filter(functions.length("words") <= 7)
+    smallWords = dataframe.filter(functions.length("words") <= 7).cache()
     smallWords.show()
     return smallWords
+
 def getMidWords(dataframe):
-    midlengthWords = dataframe.filter(functions.length("words") > 7).filter(functions.length("words") <= 14)
+    midlengthWords = dataframe.filter(functions.length("words") > 7).filter(functions.length("words") <= 14).cache()
     midlengthWords.show()
     return midlengthWords
 
