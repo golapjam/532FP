@@ -4,6 +4,11 @@ from pyspark.sql import SparkSession
 import os
 from cleaning import cleanData
 from statistics import getStats
+import nltk
+import time
+
+nltk.download("cmudict")
+
 # -*- coding: utf-8 -*-
 
 def mainLoop():
@@ -17,26 +22,38 @@ def mainLoop():
         print('(Hint: most books available are those in public domain,\n so try searching for authors published before 1923)')
         authors = input('Enter Authors\' Names Separated by Comma (First Last, First Last): ').split()
         corpus = getBooks(authors)
+    # start calculating time
+    program_time = time.time()
+
+    # ceate  spark app
     spark = SparkSession.builder.appName('TextAnalysis').getOrCreate()
+    # get data from corpus files
     outF1 = open('corpus1.txt', 'w', encoding='utf-8-sig')
     outF1.write(corpus[0])
     outF1.close()
     outF2 = open('corpus2.txt', 'w', encoding='utf-8-sig')
     outF2.write(corpus[1])
     outF2.close()
+
+    # load data in a spark dataframe
     logData1 = spark.read.text('corpus1.txt').cache()
     logData2 = spark.read.text('corpus2.txt').cache()
-    numAs = logData1.filter(logData1.value.contains('a')).count()
-    print('Lines with a: %i\n' % numAs)
+
+    # clean data
     logData1 = cleanData(logData1)
     logData2 = cleanData(logData2)
-    print(f'Stats for {authors[0]}:')
+    print(f'Stats for {authors[0]} {authors[1]}:')
     statData1 = getStats(logData1)
-    print(f'Stats for {authors[1]}:')
+    print(f'Stats for {authors[2]} {authors[3]}:')
     statData2 = getStats(logData2)
+
     spark.stop()
     if os.path.exists('corpus.txt'):
         os.remove('corpus.txt')
+
+    program_time = time.time() - program_time
+
+    print(f"Total time to complee the program: {program_time}s")
 
 
 def getBooks(authors):
@@ -99,6 +116,7 @@ def getBooks(authors):
             print(f'Found complete works for \'{author}\'')
             res.append(req.text)
     return res
-    
+
+
 if __name__ == '__main__':
     mainLoop()
