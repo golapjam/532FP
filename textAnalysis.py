@@ -80,7 +80,7 @@ def getBooks(authors):
         # convert to JSON for accessibility
         asJSON = req.json()
         req.close()
-        if asJSON['count'] == 0:
+        if not validateAuthor(asJSON, author):
             print(f'Could not find complete works for \'{author}\', trying individual works...')
             query = 'https://gutendex.com/books/?search=' + a[0] + '%20' + a[1]
             # now try for any books
@@ -93,7 +93,7 @@ def getBooks(authors):
                 SystemExit(e)
             asJSON = req.json()
             req.close()
-            if asJSON['count'] == 0:
+            if not validateAuthor(asJSON, author):
                 print(f'Could not find works for \'{author}\'')
                 return res # return to main function to try different author
             else:
@@ -121,6 +121,13 @@ def getBooks(authors):
             print(f'Found complete works for \'{author}\'')
             res.append(req.text)
     return res
-    
+
+def validateAuthor(results, author):
+    if results['count'] == 0:
+        return False
+    checkAuth = author.split()
+    resAuth = results['results'][0]['authors'][0]['name'].split()
+    return resAuth[0][:-1].lower() == checkAuth[1] and resAuth[1].lower() == checkAuth[0]
+
 if __name__ == '__main__':
     mainLoop()
