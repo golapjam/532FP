@@ -58,7 +58,7 @@ def mainLoop():
 
     program_time = time.time() - program_time
 
-    print(f"Total time to complee the program: {program_time}s")
+    print(f"Total time to complee the program: {program_time} seconds")
 
 
 def getBooks(authors):

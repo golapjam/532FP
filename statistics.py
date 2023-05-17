@@ -60,15 +60,15 @@ def getStats(dataframe):
     smog_grade = calc_smog_grade(wordCounts)
     smg_time = time.time() - smg_time
 
-    print(f"Word Count Time: {wc_ed_time}s")
-    print(f"Small Words count Time: {sm_ed_time}s")
-    print(f"Medium words count Time: {ml_ed_time}s")
-    print(f"Large Word Time: {lg_ed_time}s")
-    print(f"Word Cloud Time: {wdc_ed_time}s")
-    print(f"Chart creation Time: {cht_end_time}s")
-    print(f"Coleman-Liau calculation Time: {cli_ed_time}s")
-    print(f"Fog index calculation Time: {fgi_ed_time}s")
-    print(f"SMOG Grade calculation Time: {smg_time}s\n\n")
+    print(f"\n\nWord Count Time: {wc_ed_time} seconds")
+    print(f"Small Words count Time: {sm_ed_time} seconds")
+    print(f"Medium words count Time: {ml_ed_time} seconds")
+    print(f"Large Word Time: {lg_ed_time} seconds")
+    print(f"Word Cloud Time: {wdc_ed_time} seconds")
+    print(f"Chart creation Time: {cht_end_time} seconds")
+    print(f"Coleman-Liau calculation Time: {cli_ed_time} seconds")
+    print(f"Fog index calculation Time: {fgi_ed_time} seconds")
+    print(f"SMOG Grade calculation Time: {smg_time} seconds\n\n")
 
 
     return wordCounts, smallWords, midlengthWords, largeWords
@@ -151,6 +151,7 @@ def plot_word_distribution_chart(smallWords, midlengthWords, largeWords):
 
     cat_count_df = smallWords_count.union(midlengthWords_count).union(largeWords_count)
     cat_count_df = cat_count_df.select(functions.col("sum(count)").alias("counts"))
+    print(f"Total count of small, medium, and lare words in the text: ")
     cat_count_df.show()
 
     # convert pyspark dataframe to pandas
@@ -173,7 +174,7 @@ def wordCloud(dataframe):
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation="bilinear")
     plt.axis("off")
-    plt.savefig(f"wordCloud_{time.time()}.png")
+    plt.savefig(f"outputs/wordCloud_{time.time()}.png")
     plt.show()
 
 def fogIndex(dataframe):
