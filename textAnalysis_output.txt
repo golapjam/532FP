@@ -1,0 +1,273 @@
+Enter 2 Authors' Names Separated by Comma (First Last, First Last): Found complete works for 'william shakespeare'
+Could not find complete works for 'john milton', trying individual works...
+Found partial works for 'john milton'
+Using data from 'Paradise Lost' by 'john milton'
+Stats for william shakespeare,:
+Word Counts : 
++------+-----+
+| words|count|
++------+-----+
+| thou | 5853|
+|  thy | 4336|
+|shall | 3855|
+| thee | 3405|
+| lord | 3180|
+| king | 3003|
+|  sir | 2987|
+| good | 2954|
+| come | 2649|
+|would | 2482|
+|enter | 2473|
+| love | 2301|
+| well | 2295|
+|  let | 2292|
+| hath | 2055|
+| like | 2028|
+|  one | 1965|
+|  man | 1961|
+| upon | 1861|
+|  may | 1806|
++------+-----+
+only showing top 20 rows
+
+Small Words (length <7) :
++------+-----+
+| words|count|
++------+-----+
+| thou | 5853|
+|  thy | 4336|
+|shall | 3855|
+| thee | 3405|
+| lord | 3180|
+| king | 3003|
+|  sir | 2987|
+| good | 2954|
+| come | 2649|
+|would | 2482|
+|enter | 2473|
+| love | 2301|
+| well | 2295|
+|  let | 2292|
+| hath | 2055|
+| like | 2028|
+|  one | 1965|
+|  man | 1961|
+| upon | 1861|
+|  may | 1806|
++------+-----+
+only showing top 20 rows
+
+Medium Words ( 7 < length <14) :
++-----------+-----+
+|      words|count|
++-----------+-----+
+|   richard |  769|
+|   nothing |  678|
+| therefore |  653|
+|  falstaff |  598|
+|   brother |  597|
+| gentleman |  585|
+|   another |  582|
+|  daughter |  539|
+|   servant |  507|
+|   friends |  497|
+|gloucester |  456|
+|  mistress |  441|
+|   warwick |  409|
+|   thought |  408|
+|   without |  404|
+|   welcome |  376|
+|  farewell |  369|
+| messenger |  354|
+|   fortune |  348|
+|  thousand |  347|
++-----------+-----+
+only showing top 20 rows
+
+Large Words (length > 15):
++----------------+-----+
+|           words|count|
++----------------+-----+
+| northumberland |  160|
+|notwithstanding |   23|
+|gloucestershire |   15|
+| transformation |    6|
+| counterfeiting |    5|
+| interpretation |    5|
+|enfranchisement |    5|
+| preposterously |    4|
+| unthankfulness |    4|
+|impossibilities |    3|
+| slaughterhouse |    3|
+| distemperature |    3|
+|interchangeably |    3|
+| voluptuousness |    2|
+|interrogatories |    2|
+| accomplishment |    2|
+|extraordinarily |    2|
+| redistributing |    2|
+|superstitiously |    2|
+| distemp’rature |    2|
++----------------+-----+
+only showing top 20 rows
+
+Total count of small, medium, and lare words in the text: 
++------+
+|counts|
++------+
+|380509|
+|135202|
+|   351|
++------+
+
+Coleman-Liau Index: -505.3603449121157
+Gunning fog index : 17.62408233360281
+SMOG Grade: 14.841145916399045
+
+
+Word Count Time: 72.08449816703796 seconds
+Small Words count Time: 0.06350302696228027 seconds
+Medium words count Time: 0.07580089569091797 seconds
+Large Word Time: 0.339066743850708 seconds
+Word Cloud Time: 5.4314141273498535 seconds
+Chart creation Time: 2.730803966522217 seconds
+Coleman-Liau calculation Time: 0.2523326873779297 seconds
+Fog index calculation Time: 0.2305130958557129 seconds
+SMOG Grade calculation Time: 0.14069604873657227 seconds
+
+
+Stats for john milton:
+Word Counts : 
++-------+-----+
+|  words|count|
++-------+-----+
+|  thou |  435|
+|   thy |  419|
+|  thee |  360|
+|heaven |  353|
+|  thus |  320|
+| shall |  286|
+|   god |  240|
+|   yet |  230|
+|though |  218|
+| earth |  205|
+|    us |  188|
+| first |  173|
+|   man |  156|
+|  high |  149|
+|   one |  145|
+|   may |  142|
+|   far |  129|
+| great |  123|
+| death |  121|
+|  till |  120|
++-------+-----+
+only showing top 20 rows
+
+Small Words (length <7) :
++-------+-----+
+|  words|count|
++-------+-----+
+|  thou |  435|
+|   thy |  419|
+|  thee |  360|
+|heaven |  353|
+|  thus |  320|
+| shall |  286|
+|   god |  240|
+|   yet |  230|
+|though |  218|
+| earth |  205|
+|    us |  188|
+| first |  173|
+|   man |  156|
+|  high |  149|
+|   one |  145|
+|   may |  142|
+|   far |  129|
+| great |  123|
+| death |  121|
+|  till |  120|
++-------+-----+
+only showing top 20 rows
+
+Medium Words ( 7 < length <14) :
++----------+-----+
+|     words|count|
++----------+-----+
+|  project |   92|
+|  without |   80|
+| paradise |   61|
+|  perhaps |   55|
+|  spirits |   54|
+| thoughts |   54|
+| heaven’s |   53|
+|  created |   49|
+| heavenly |   48|
+|  thought |   47|
+|  eternal |   45|
+|  replied |   44|
+| darkness |   43|
+|therefore |   40|
+|  mankind |   39|
+|knowledge |   37|
+|  delight |   36|
+|  brought |   36|
+|gutenberg |   35|
+|  serpent |   35|
++----------+-----+
+only showing top 20 rows
+
+Large Words (length > 15):
++-----------------+-----+
+|            words|count|
++-----------------+-----+
+|  constellations |    5|
+|  circumspection |    3|
+|  principalities |    2|
+|  intelligential |    2|
+|  redistributing |    2|
+|  electronically |    2|
+|  redistribution |    2|
+| discountenanced |    2|
+| distinguishable |    1|
+|  unaccomplished |    1|
+|  disproportions |    1|
+|unextinguishable |    1|
+|  identification |    1|
+|incomprehensible |    1|
+|  predestination |    1|
+| uncircumscribed |    1|
+|  unpremeditated |    1|
+|unenforceability |    1|
+| representations |    1|
+|  transmigration |    1|
++-----------------+-----+
+only showing top 20 rows
+
+Total count of small, medium, and lare words in the text: 
++------+
+|counts|
++------+
+| 33077|
+| 14155|
+|    39|
++------+
+
+Coleman-Liau Index: -127.59774549979824
+Gunning fog index : 14.043470691853518
+SMOG Grade: 9.765888870194892
+
+
+Word Count Time: 7.809302091598511 seconds
+Small Words count Time: 0.03747892379760742 seconds
+Medium words count Time: 0.05895400047302246 seconds
+Large Word Time: 0.1424262523651123 seconds
+Word Cloud Time: 4.036201238632202 seconds
+Chart creation Time: 5.39057993888855 seconds
+Coleman-Liau calculation Time: 0.17214512825012207 seconds
+Fog index calculation Time: 0.15090107917785645 seconds
+SMOG Grade calculation Time: 0.10701179504394531 seconds
+
+
+Total time to complete the program: 103.38187336921692 seconds
